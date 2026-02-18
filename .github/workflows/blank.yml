@@ -18,6 +18,8 @@ jobs:
       issues: write  
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Post a comment on the PR
         run: gh issue comment "$NUMBER" --body "$BODY"
         env:
